@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cassert>
 #include <stdbool.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 using namespace std;
 
@@ -160,6 +163,7 @@ class BST {
 
 int main() {
     cout << "hola" << endl;
+    srand(time(NULL));
     
     BST<string, int> ciudades;
     ciudades.insert("pereira", 1);
