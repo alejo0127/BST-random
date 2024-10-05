@@ -40,20 +40,6 @@ class BST {
  private:
   Node* root;
   unsigned int size;
-
- public:
-  BST() : root(nullptr), size(0) {}
-  unsigned int getSize() { return size; }
-  bool empty() { return root == nullptr; }
-  void insert(K key, V value) {
-    if (empty()) {
-      root = new Node(key, value);
-      size++;
-    } else {
-      insert(key, value, root);
-    }
-  }
-private:
   void insert(K key, V value, Node* n) {
     if (key < n->getKey()) {
       if (n->hasLeft()) {
@@ -75,27 +61,36 @@ private:
       // key repetido
     }
   }
-
+  void preorder(Node * n){
+	if(n==nullptr) return;
+	cout <<n->getKey()<<" ";
+	preorder(n->getLeft());
+	preorder(n->getRight());
+}
+void inorder(Node * n){
+	if(n==nullptr) return;
+	inorder(n->getLeft());
+	cout <<n->getKey()<<" ";
+	inorder(n->getRight());
+}
+void posorder(Node * n){
+	if(n==nullptr) return;
+	posorder(n->getLeft());
+	posorder(n->getRight());
+	cout <<n->getKey()<<" ";
+}
  public:
-  void insert2(K key, V value) { root = insert2(key, value, root); }
-  
- private:
-  Node* insert2(K key, V value, Node* n) {
-    if (n == nullptr) {
+  BST() : root(nullptr), size(0) {}
+  unsigned int getSize() { return size; }
+  bool empty() { return root == nullptr; }
+  void insert(K key, V value) {
+    if (empty()) {
+      root = new Node(key, value);
       size++;
-      return new Node(key, value);
-    }
-    if (key < n->getKey()) {
-      n->setLeft(insert2(key, value, n->getLeft()));
-      return n;
-    } else if (n->getKey() < key) {
-      n->setRight(insert2(key, value, n->getRight()));
-      return n;
     } else {
-      return n;
+      insert(key, value, root);
     }
   }
-  public:
   void print(){
     assert(!empty() && "vacío");
     cout<<"Arbol:\nRaiz:"<<root->getKey()<<" "<<root->getValue()<<endl;
@@ -132,28 +127,6 @@ private:
 	posorder(root);
 	}
   }
-  private:
-  void preorder(Node * n){
-	if(n==nullptr) return;
-	cout <<n->getKey()<<" ";
-	preorder(n->getLeft());
-	preorder(n->getRight());
-}
-void inorder(Node * n){
-	if(n==nullptr) return;
-	inorder(n->getLeft());
-	cout <<n->getKey()<<" ";
-	inorder(n->getRight());
-}
-void posorder(Node * n){
-	if(n==nullptr) return;
-	posorder(n->getLeft());
-	posorder(n->getRight());
-	cout <<n->getKey()<<" ";
-}
-
-
-
 };
 int main(){
     cout<<"hola"<<endl;
