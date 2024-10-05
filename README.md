@@ -2,6 +2,8 @@ Trabajo Estructuras de datos:
 
 Nombres: Ana Sofia Ossa Betancur, Alejandro Ramirez Huertas
 
+![344fb2c9-cf1a-43e8-af62-e3d8d25a4eae](https://github.com/user-attachments/assets/a9995799-0682-467c-a97b-ef1a92de75a8)
+
 Código:
 ```c++
 #include <iostream>
