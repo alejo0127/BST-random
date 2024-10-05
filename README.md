@@ -40,6 +40,8 @@ class BST {
  private:
   Node* root;
   unsigned int size;
+
+  // Función para insertar un nodo en el BST
   void insert(K key, V value, Node* n) {
     if (key < n->getKey()) {
       if (n->hasLeft()) {
@@ -61,28 +63,49 @@ class BST {
       // key repetido
     }
   }
+
+  // Recorridos del árbol
   void preorder(Node * n){
-	if(n==nullptr) return;
-	cout <<n->getKey()<<" ";
-	preorder(n->getLeft());
-	preorder(n->getRight());
-}
-void inorder(Node * n){
-	if(n==nullptr) return;
-	inorder(n->getLeft());
-	cout <<n->getKey()<<" ";
-	inorder(n->getRight());
-}
-void posorder(Node * n){
-	if(n==nullptr) return;
-	posorder(n->getLeft());
-	posorder(n->getRight());
-	cout <<n->getKey()<<" ";
-}
+    if(n == nullptr) return;
+    cout << n->getKey() << " ";
+    preorder(n->getLeft());
+    preorder(n->getRight());
+  }
+
+  void inorder(Node * n){
+    if(n == nullptr) return;
+    inorder(n->getLeft());
+    cout << n->getKey() << " ";
+    inorder(n->getRight());
+  }
+
+  void posorder(Node * n){
+    if(n == nullptr) return;
+    posorder(n->getLeft());
+    posorder(n->getRight());
+    cout << n->getKey() << " ";
+  }
+
+  
+  int altura(Node* n) {
+   
+    if(n==nullptr){
+      return 0;
+    }
+
+    int alturaIzquierda = altura(n->getLeft());
+    int alturaDerecha = altura(n->getRight());
+
+    
+    return 1 + max(alturaIzquierda, alturaDerecha);
+  }
+
  public:
   BST() : root(nullptr), size(0) {}
+  
   unsigned int getSize() { return size; }
   bool empty() { return root == nullptr; }
+  
   void insert(K key, V value) {
     if (empty()) {
       root = new Node(key, value);
@@ -91,45 +114,53 @@ void posorder(Node * n){
       insert(key, value, root);
     }
   }
-  void print(){
+
+  void print() {
     assert(!empty() && "vacío");
     cout<<"Arbol:\nRaiz:"<<root->getKey()<<" "<<root->getValue()<<endl;
-    if(root->hasLeft()){
+    if(root->hasLeft()) {
       cout<<root->getKey()<<"\'s left: "<<endl;
       root->print(root->getLeft());
     }
-    if(root->hasRight()){
+    if(root->hasRight()) {
       cout<<root->getKey()<<"\'s right: "<<endl;
       root->print(root->getRight());
     }
   }
-  void preorder(){
-	if(root==nullptr){
-	cout<<"vacio"<<endl;
-	}
-	else{
-	preorder(root);
-	}
+
+  void preorder() {
+    if (root == nullptr) {
+      cout << "vacio" << endl;
+    } else {
+      preorder(root);
+    }
   }
-  void inorder(){
-	if(root==nullptr){
-	cout<<"vacio"<<endl;
-	}
-	else{
-	inorder(root);
-	}
+
+  void inorder() {
+    if (root == nullptr) {
+      cout << "vacio" << endl;
+    } else {
+      inorder(root);
+    }
   }
-  void posorder(){
-	if(root==nullptr){
-	cout<<"vacio"<<endl;
-	}
-	else{
-	posorder(root);
-	}
+
+  void posorder() {
+    if (root == nullptr) {
+      cout << "vacio" << endl;
+    } else {
+      posorder(root);
+    }
+  }
+
+  // Función pública para obtener la altura del BST
+  int altura() {
+    return altura(root);  // Llamada a la función privada recursiva
   }
 };
-int main(){
-    cout<<"hola"<<endl;
+
+int main() {
+    cout << "hola" << endl;
+    
     BST<string, int> ciudades;
     ciudades.insert("pereira", 1);
     ciudades.insert("manizales", 2);
@@ -138,11 +169,16 @@ int main(){
     ciudades.insert("piendamo", 5);
     ciudades.insert("guacari", 6);
     ciudades.insert("armenia", 7);
+    ciudades.insert("leguizamo",8);
+    
     ciudades.print();
     ciudades.inorder();
-    cout<<endl;
+    cout << endl;
     ciudades.posorder();
-    cout<<endl;
+    cout << endl;
     ciudades.preorder();
-    cout<<endl;
+    cout << endl;
+
+    
+    cout << "La altura del arbol es: " << ciudades.altura() << endl;
 }
