@@ -26,7 +26,6 @@ class BST {
     bool hasRight() { return right != nullptr; }
     void setLeft(Node* n) { left = n; }
     void setRight(Node* n) { right = n; }
-    unsigned int getSize(){return size;}
     Node* getLeft(){ return left;}
     Node* getRight(){ return right;}
     void print(Node *n){
@@ -165,7 +164,7 @@ class BST {
 
 int main() {
     
-    vector<string> ciudadesVector= {
+    vector<string> ciudadesVector = {
         "Ámsterdam", "Ankara", "Atenas", "Auckland", "Bangkok", "Barcelona", "Beirut", "Belgrado", "Berlín", "Bogotá",
         "Boston", "Bratislava", "Bruselas", "Budapest", "Buenos Aires", "Cairo", "Calcuta", "Canberra", "Caracas", "Casablanca",
         "Chicago", "Ciudad de México", "Copenhague", "Dakar", "Damasco", "Dublín", "Dubái", "Edimburgo", "Estambul", "Estocolmo",
@@ -188,8 +187,8 @@ int main() {
      }
      else{
        r=rand() % ciudadesVector.size();
-       ciudades.insert(r, ciudadesVector.at(r));
-       ciudadesVector.remove(r);
+       ciudades.insert(ciudadesVector.at(r),r);
+       ciudadesVector.erase(ciudadesVector.begin() + r);
      }
     }
     
