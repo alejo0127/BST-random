@@ -202,14 +202,18 @@ int main() {
     
     
     ciudades.print();
+    cout << endl;
+    cout << endl;
     ciudades.inorder();
+    cout << endl;
     cout << endl;
     ciudades.posorder();
     cout << endl;
+    cout << endl;
     ciudades.preorder();
+    cout << endl;
     cout << endl;
 
     
     cout << "La altura del arbol es: " << ciudades.altura() << endl;
-}
 ```
