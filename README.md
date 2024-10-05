@@ -162,19 +162,25 @@ class BST {
 };
 
 int main() {
-    cout << "hola" << endl;
+    
+    vector<string> ciudades= {
+        "Ámsterdam", "Ankara", "Atenas", "Auckland", "Bangkok", "Barcelona", "Beirut", "Belgrado", "Berlín", "Bogotá",
+        "Boston", "Bratislava", "Bruselas", "Budapest", "Buenos Aires", "Cairo", "Calcuta", "Canberra", "Caracas", "Casablanca",
+        "Chicago", "Ciudad de México", "Copenhague", "Dakar", "Damasco", "Dublín", "Dubái", "Edimburgo", "Estambul", "Estocolmo",
+        "Fráncfort", "Ginebra", "Glasgow", "Guadalajara", "Hamburgo", "Helsinki", "Hong Kong", "Honolulu", "Houston", "Islamabad",
+        "Jakarta", "Jerusalén", "Johannesburgo", "Kabul", "Kampala", "Katmandú", "Kiev", "Kigali", "Kingston", "Kuala Lumpur",
+        "La Habana", "Lagos", "Lima", "Lisboa", "Londres", "Los Ángeles", "Luanda", "Madrid", "Managua", "Manila",
+        "Marrakech", "Marsella", "Melbourne", "México D.F.", "Miami", "Milán", "Montevideo", "Moscú", "Múnich", "Nairobi",
+        "Nueva Delhi", "Nueva York", "Oslo", "Ottawa", "Panamá", "París", "Pekín", "Perth", "Praga", "Quito",
+        "Rabat", "Reikiavik", "Río de Janeiro", "Roma", "San Francisco", "San José", "San Juan", "San Salvador", "Santiago de Chile", "Santo Domingo",
+        "São Paulo", "Seúl", "Shanghái", "Singapur", "Sídney", "Sofía", "Tiflis", "Tokio", "Toronto", "Varsovia"
+    };
+
     srand(time(NULL));
     int r;
     r=rand() % 100;
     BST<string, int> ciudades;
-    ciudades.insert("pereira", 1);
-    ciudades.insert("manizales", 2);
-    ciudades.insert("bogota", 3);
-    ciudades.insert("cali", 4);
-    ciudades.insert("piendamo", 5);
-    ciudades.insert("guacari", 6);
-    ciudades.insert("armenia", 7);
-    ciudades.insert("leguizamo",8);
+    
     
     ciudades.print();
     ciudades.inorder();
