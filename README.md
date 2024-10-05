@@ -183,12 +183,12 @@ int main() {
     BST<string, int> ciudades;
     
     while(1){
-     if(ciudadesVector.getSize()==0){
+     if(ciudadesVector.size()==0){
       break;
      }
      else{
-       r=rand() % ciudadesVector.getSize();
-       ciudades.insert(ciudadesVector.at(r));
+       r=rand() % ciudadesVector.size();
+       ciudades.insert(r, ciudadesVector.at(r));
        ciudadesVector.remove(r);
      }
     }
