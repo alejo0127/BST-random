@@ -164,7 +164,8 @@ class BST {
 int main() {
     cout << "hola" << endl;
     srand(time(NULL));
-    
+    int r;
+    r=rand() % 100;
     BST<string, int> ciudades;
     ciudades.insert("pereira", 1);
     ciudades.insert("manizales", 2);
