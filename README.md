@@ -4,6 +4,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <vector>
 
 using namespace std;
 
@@ -25,6 +26,7 @@ class BST {
     bool hasRight() { return right != nullptr; }
     void setLeft(Node* n) { left = n; }
     void setRight(Node* n) { right = n; }
+    unsigned int getSize(){return size;}
     Node* getLeft(){ return left;}
     Node* getRight(){ return right;}
     void print(Node *n){
@@ -179,12 +181,13 @@ int main() {
     srand(time(NULL));
     int r;
     BST<string, int> ciudades;
+    
     while(1){
-     if(vector.getSize()==0){
+     if(ciudadesVector.getSize()==0){
       break;
      }
      else{
-       r=rand() % vector.getSize();
+       r=rand() % ciudadesVector.getSize();
        ciudades.insert(ciudadesVector.at(r));
        ciudadesVector.remove(r);
      }
