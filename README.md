@@ -1,3 +1,9 @@
+Trabajo Estructuras de datos:
+
+Nombres: Ana Sofia Ossa Betancur, Alejandro Ramirez Huertas
+
+Código:
+```c++
 #include <iostream>
 #include <cassert>
 #include <stdbool.h>
@@ -204,3 +210,4 @@ int main() {
     
     cout << "La altura del arbol es: " << ciudades.altura() << endl;
 }
+```
