@@ -163,7 +163,7 @@ class BST {
 
 int main() {
     
-    vector<string> ciudades= {
+    vector<string> ciudadesVector= {
         "Ámsterdam", "Ankara", "Atenas", "Auckland", "Bangkok", "Barcelona", "Beirut", "Belgrado", "Berlín", "Bogotá",
         "Boston", "Bratislava", "Bruselas", "Budapest", "Buenos Aires", "Cairo", "Calcuta", "Canberra", "Caracas", "Casablanca",
         "Chicago", "Ciudad de México", "Copenhague", "Dakar", "Damasco", "Dublín", "Dubái", "Edimburgo", "Estambul", "Estocolmo",
@@ -178,8 +178,17 @@ int main() {
 
     srand(time(NULL));
     int r;
-    r=rand() % 100;
     BST<string, int> ciudades;
+    while(1){
+     if(vector.getSize()==0){
+      break;
+     }
+     else{
+       r=rand() % vector.getSize();
+       ciudades.insert(ciudadesVector.at(r));
+       ciudadesVector.remove(r);
+     }
+    }
     
     
     ciudades.print();
