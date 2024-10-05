@@ -1,5 +1,3 @@
-# BST-random
-
 #include <iostream>
 #include <cassert>
 #include <stdbool.h>
@@ -118,13 +116,43 @@ private:
 	preorder(root);
 	}
   }
+  void inorder(){
+	if(root==nullptr){
+	cout<<"vacio"<<endl;
+	}
+	else{
+	inorder(root);
+	}
+  }
+  void posorder(){
+	if(root==nullptr){
+	cout<<"vacio"<<endl;
+	}
+	else{
+	posorder(root);
+	}
+  }
   private:
   void preorder(Node * n){
 	if(n==nullptr) return;
-	cout <<n->getData();
+	cout <<n->getKey()<<" ";
 	preorder(n->getLeft());
 	preorder(n->getRight());
 }
+void inorder(Node * n){
+	if(n==nullptr) return;
+	inorder(n->getLeft());
+	cout <<n->getKey()<<" ";
+	inorder(n->getRight());
+}
+void posorder(Node * n){
+	if(n==nullptr) return;
+	posorder(n->getLeft());
+	posorder(n->getRight());
+	cout <<n->getKey()<<" ";
+}
+
+
 
 };
 int main(){
@@ -138,4 +166,10 @@ int main(){
     ciudades.insert("guacari", 6);
     ciudades.insert("armenia", 7);
     ciudades.print();
+    ciudades.inorder();
+    cout<<endl;
+    ciudades.posorder();
+    cout<<endl;
+    ciudades.preorder();
+    cout<<endl;
 }
