@@ -9,7 +9,8 @@ Las primeras cinco alturas al correr el código son las siguientes:
 ![408f6d46-7905-441c-87b4-3e867603d8a3](https://github.com/user-attachments/assets/b365269e-b356-4572-8359-8f6d2e557899)
 ![f3d23083-16aa-484d-a40f-3c5e07f018ff](https://github.com/user-attachments/assets/1ce607f1-e5f5-4773-9381-be92ac526a65)
 
-Y contando con las demás veces que corrimos el código, obtuvimos un promedio de 13.8 de la altura. La altura de los árboles oscila entre 9 y 20, por lo que podemos concluir que este método de recorrer el vector aleatoriamente e insertar su contenido en el árbol, optimiza recorridos futuros del árbol, pues el máximo número de niveles que puede alcanzar de altura es 100, y el promedio del experimento nos rojó resultados muy apartados de este.
+## Conclusiones:
+Además de estas 5, contando con las demás veces que corrimos el código, obtuvimos un promedio de 13.8 de la altura. La cual oscila entre 9 y 20, por lo que podemos concluir que este método de recorrer el vector aleatoriamente e insertar su contenido en el árbol, optimiza recorridos futuros del árbol, pues el máximo número de niveles que puede alcanzar de altura es 100, y el promedio del experimento nos rojó resultados muy apartados de este.
 Código:
 ```c++
 
