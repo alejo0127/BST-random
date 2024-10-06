@@ -1,4 +1,4 @@
-#Trabajo Estructuras de datos:
+# Trabajo Estructuras de datos:
 
 Nombres: Ana Sofia Ossa Betancur, Alejandro Ramirez Huertas
 
