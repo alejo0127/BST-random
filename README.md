@@ -172,7 +172,8 @@ class BST {
     }
   }
 
-  // Función pública para obtener la altura del BST
+ public :
+
   int altura() {
     return altura(root);  // Llamada a la función privada recursiva
   }
